@@ -46,7 +46,7 @@ This project will be implemented with the following technologies:
  - Complete the `note.js` module
  - Render the keys and board using `Easel.js`
 
- ** Day 3**: Create the backend logic and songs (arrays of notes) which can be played by the user. Goals for the day:
+ **Day 3**: Create the backend logic and songs (arrays of notes) which can be played by the user. Goals for the day:
 
  - Complete the `logic.js` module which will handle the backend logic of the application.
 
