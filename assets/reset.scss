@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  background-color: black;
+  width: 25%;
+  position: absolute;
+  right: 0px;
+  height: 100%;
+}
+
+p {
+  background-color: black;
+  color: white;
+  z-index: 5;
+}
+
+canvas {
+  z-index: 1;
+}
