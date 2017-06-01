@@ -8,11 +8,14 @@ div {
   flex-direction: column;
   z-index: 5;
   background-color: black;
-  width: 25%;
+  width: 24%;
   position: absolute;
   right: 0px;
   height: 100%;
   align-items: center;
+  border-left-width: 7px;
+  border-color: white;
+  border-left-style: solid;
 }
 
 #counter {
@@ -50,4 +53,16 @@ p {
 
 #play-elise:hover {
   color: red;
+}
+
+#in-button, #git-button {
+  height: 60px;
+  width: 60px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+#buttons {
+  bottom: 0;
+  position: absolute;
 }
