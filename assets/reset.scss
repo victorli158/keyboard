@@ -28,10 +28,19 @@ div {
 h1, h2, p, #counter, li {
   background-color: black;
   color: white;
+  font-family: 'Days One', sans-serif;
 }
 
 h1 {
   font-size: 48px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 18px;
 }
 
 h2 {
@@ -39,7 +48,7 @@ h2 {
 }
 
 p {
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -51,15 +60,15 @@ p {
   color: orange;
 }
 
-#play-elise:hover {
-  color: red;
-}
-
 #in-button, #git-button {
   height: 60px;
   width: 60px;
   margin: 10px;
   cursor: pointer;
+}
+
+#git-button {
+  background-color: white;
 }
 
 #buttons {
