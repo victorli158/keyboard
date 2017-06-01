@@ -12,19 +12,38 @@ div {
   position: absolute;
   right: 0px;
   height: 100%;
-}
-
-p {
-  background-color: black;
-  color: white;
-  z-index: 5;
-}
-
-canvas {
-  z-index: 1;
+  align-items: center;
 }
 
 #counter {
+  border-width: 0px;
+  font-size: 42px;
+  text-align: center;
+  max-width: 25%;
+}
+
+h1, h2, p, #counter, li {
   background-color: black;
   color: white;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#play-mary:hover {
+  color: yellow;
+}
+
+#play-elise:hover {
+  color: orange;
 }
