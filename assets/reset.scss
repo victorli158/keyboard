@@ -20,18 +20,24 @@ div {
 
 #counter {
   border-width: 0px;
-  font-size: 42px;
+  font-size: 64px;
   text-align: center;
   max-width: 25%;
   animation: pulse 0.5s;
+  position: absolute;
+  top: 5%;
+  left: 26%;
+  background: transparent;
+  color: white;
+  font-family: 'Days One', sans-serif;
 }
 
 @keyframes pulse {
   0% {
-    font-size: 64px;
+    font-size: 88px;
   }
   100% {
-    font-size: 42px;
+    font-size: 64px;
   }
 }
 
@@ -45,7 +51,7 @@ div {
   max-width: 50%;
 }
 
-h1, h2, p, #counter, li, #grade {
+h1, h2, p, li, #grade {
   background-color: black;
   color: white;
   font-family: 'Days One', sans-serif;
