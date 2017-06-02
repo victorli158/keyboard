@@ -1,62 +1,91 @@
-# Keyboard
+# KEYboard
 
 ## Background
 
-KEYboard is a game that allows players to turn their keyboard into a piano
-KEYboard can be played either freestyle or with included song charts which require the player to play the correct notes at the right time. Upon completing a song, players receive a letter grade based on their performance!
+KEYboard is a game that allows players to turn their device keyboard into a piano.
+KEYboard can be played either freestyle or with included song charts which require the player to play the correct notes at the right time. Upon completing a song, players receive a letter grade based on their performance.
 
-## Functionality & MVP
+KEYboard was designed and built within a one-week timeframe with vanilla JavaScript, HTML5, CSS3, and Canvas.
 
-- [ ] Allow players to play freestyle
-- [ ] Allow players to play along to songs of varying difficulty
-- [ ] Assign a letter grade based on the performance of the player
-- [ ] Lastly, a production README will be included.
+![screenshot](http://res.cloudinary.com/nearbytes/image/upload/c_scale,q_100,w_1000/v1496424748/Screen_Shot_2017-06-02_at_10.32.06_AM_rfs35s.png)
 
-## Wireframes
+## Gameplay and Features
 
-This app will consist of a single screen with a section on the bottom for keys, the main section which displays notes which fall towards the keys and must be played at the right time, and a sidebar with the main title, levels, and links/info. Songs will list several songs of varying difficulty to play along to.
+When a player starts the application, they can play freestyle for as long as they like.
+By default, the on-screen keys display their corresponding keyboard controls. The toggle button
+in the side bar allows players to see the notes that are produced when the keys are played.
 
-![wireframes](docs/keyboard_wireframe.png)
+Songs can be selected, at which point a score counter is displayed and notes begin falling from the top
+of the screen. The player increases their score by pressing the proper key as these notes cross
+the blue line on-screen. At the end of the song, the player is assigned a grade based on their performance.
 
-## Architecture and Technologies
+![screenshot](http://res.cloudinary.com/nearbytes/image/upload/c_scale,q_100,w_1000/v1496425494/Screen_Shot_2017-06-02_at_10.44.23_AM_ph02z7.png)
 
-This project will be implemented with the following technologies:
+### Key Presses, Audio Tones, and Scoring
 
-- Vanilla JavaScript and `jquery` for overall structure and logic
-- `Easel.js` with `HTML5 Canvas` for DOM manipulation and rendering
-- Webpack to bundle and serve up the various scripts
+Key presses were simple to handle in freestyle mode and for the tutorial song,
+"Mary Had a Little Lamb". Each key plays its own note like it would with a real piano.
+However, with "Mia and Sebastian's Theme", keys had to produce multiple different tones
+so that gameplay could remain manageable with only eight input keys. See below for some code snippets:
 
-In addition to the webpack entry file, there will be several scripts involved in the project:
+```javascript
+// note.js
+isCollidedWith() {
+  if (this.game.line[0].pos[1] - 30 < this.pos[1] &&
+      this.game.line[0].pos[1] + 30 > this.pos[1]) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
-`board.js`: this script will handle the logic for creating and updating the necessary `Easel.js` elements and rendering them to the DOM.
+isInRange() {
+  if (this.game.line[0].pos[1] - 90 < this.pos[1] &&
+      this.game.line[0].pos[1] + 90 > this.pos[1]) {
+    return true;
+  } else {
+    return false;
+  }
+}
+```
 
-`logic.js`: this script will handle the logic behind the scenes. Audio files will be played once keys are pressed, and the timing of key presses will affect a player's performance rating.
+```javascript
+// game.js
+registerMiaListeners() {
+  this.removeKeyListeners();
+  window.addEventListener('keydown', e => {
+    e.preventDefault();
+    if (e.keyCode === 83) {
+      this.keys[0].color = "#e6e6e6";
+      this.notes.forEach((note) => {
+        if (note.isInRange() && note.key === "s") {
+          document.getElementById(`${note.tone}`).cloneNode(true).play();
+        }
+        if (note.isCollidedWith() && note.key === "s") {
+          this.counter[0].incrementCounter();
+        }
+      });
+    } else if (e.keyCode === 68) {
+      // etc.
+    }
+  }
+}
+```
 
-`note.js`: this script will house the constructor function for the `Note` class, which will have a key value and velocity based on the tempo of the song.
+In the Note class, isCollidedWith sets a buffer around the line in which button presses contribute to the player score. isInRange sets a wider range in which button presses produce the relevant tone, so the game doesn't play tones that won't be used until later or worse, all the tones that key would be responsible for throughout the song.
 
-## Implementation Timeline
+Within registerMiaListeners, the default key listeners are removed so that the player isn't limited to one octave of tones. New key listeners are added so valid button presses (those used to play the game) can increase the player's score and play the correct tones. The cloneNode function was necessary to ensure that rapid key presses would still produce a tone, even if the previous tone hadn't finished playing yet.
 
-**Day 1**: Set up all necessary Node modules, including getting webpack up and running and Easel.js installed. Create webpack.config.js as well as package.json. Write a basic entry file and the bare bones of all scripts outlined above. Learn the basics of Easel.js. Goals for the day:
+## Future Improvements
 
-- Get a green bundle with webpack
-- Learn enough Easel.js to render an object to the Canvas element
+### Additional songs
 
-**Day 2**: Dedicate this day to learning the Easel.js API. Rectangular `Note` objects will "fall" down the `Board` object towards the keys at the bottom of the page, which will correspond to different keys on the keyboard. Goals for the day:
+So far, a beginner and intermediate song are available to players. In addition, a harder song (probably "Fur Elise") can be added.
 
-- Complete the `note.js` module
-- Render the keys and board using `Easel.js`
+### Additional animations
 
-**Day 3**: Create the backend logic and songs (arrays of notes) which can be played by the player. Goals for the day:
+So far, keys change color to indicate key presses, and the counter pulses when the player's score increases. Additional animations could:
 
-- Complete the `logic.js` module which will handle the backend logic of the application.
-
-**Day 4**: Install the controls for the player to interact with Keyboard. Style the frontend, making it polished and professional. Goals for the day:
-
-- Create controls for players to play keys and produce sounds
-- Render everything in a polished and aesthetically-pleasing way
-
-## Bonus Features
-
-- [ ] Add option to record songs to be played back
-- [ ] Add leaderboards for high scores
-- [ ] Add additional songs
+- [ ] visually show the tempo of the song.
+- [ ] indicate to the player that they missed a note.
+- [ ] provide more feedback when the player increases their score.

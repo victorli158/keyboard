@@ -70,6 +70,12 @@ h1, h2, p, li, #grade {
   outline: none;
 }
 
+#instructions {
+  font-size: 16px;
+  padding-left: 7.5%;
+  padding-right: 11.5%;
+}
+
 h1 {
   font-size: 48px;
   border-style: solid;
@@ -80,15 +86,33 @@ h1 {
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 18px;
+  cursor: default;
+  margin-bottom: 12.5%;
 }
 
 h2 {
   font-size: 36px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  cursor: default;
 }
 
 p {
   font-size: 20px;
   cursor: default;
+}
+
+#play-mary, #play-mia {
+  margin: 3%;
+}
+
+#play-mia {
+  margin-bottom: 14.5%;
+}
+
+#toggle {
+  margin-top: 0;
+  margin-bottom: 10.5%;
 }
 
 #play-mary, #play-mia, #toggle {
