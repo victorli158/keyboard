@@ -25,10 +25,32 @@ div {
   max-width: 25%;
 }
 
-h1, h2, p, #counter, li {
+#grade {
+  font-size: 64px;
+  position: absolute;
+  z-index: -1;
+  top: 30%;
+  left: 12.5%;
+  max-width: 50%;
+}
+
+h1, h2, p, #counter, li, #grade {
   background-color: black;
   color: white;
   font-family: 'Days One', sans-serif;
+}
+
+#counter, #grade {
+  cursor: default;
+  border: none;
+  color: transparent;
+  text-shadow: 0 0 0 white;
+  text-align: center;
+}
+
+#counter:focus, #grade:focus {
+  outline-width: 0px;
+  outline: none;
 }
 
 h1 {
@@ -58,6 +80,10 @@ p {
 
 #play-mia:hover {
   color: #39FF14;
+}
+
+#toggle:hover {
+  color: yellow;
 }
 
 #in-button, #git-button {
