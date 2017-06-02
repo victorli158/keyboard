@@ -65,6 +65,7 @@ registerMiaListeners() {
         }
         if (note.isCollidedWith() && note.key === "s") {
           this.counter[0].incrementCounter();
+          note.remove();
         }
       });
     } else if (e.keyCode === 68) {
