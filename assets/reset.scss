@@ -23,7 +23,18 @@ div {
   font-size: 42px;
   text-align: center;
   max-width: 25%;
+  animation: pulse 0.5s;
 }
+
+@keyframes pulse {
+  0% {
+    font-size: 64px;
+  }
+  100% {
+    font-size: 42px;
+  }
+}
+
 
 #grade {
   font-size: 64px;
@@ -71,6 +82,10 @@ h2 {
 
 p {
   font-size: 20px;
+  cursor: default;
+}
+
+#play-mary, #play-mia, #toggle {
   cursor: pointer;
 }
 
