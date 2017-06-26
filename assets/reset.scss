@@ -1,6 +1,9 @@
 body {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
 div {
@@ -13,7 +16,7 @@ div {
   right: 0px;
   height: 100%;
   align-items: center;
-  border-left-width: 7px;
+  border-left-width: 0.6vw;
   border-color: white;
   border-left-style: solid;
 }
