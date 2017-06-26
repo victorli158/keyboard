@@ -9,7 +9,7 @@ KEYboard can be played either freestyle or with included song charts which requi
 
 KEYboard was designed and built within a one-week timeframe with vanilla JavaScript, HTML5, CSS3, and Canvas.
 
-![screenshot](http://res.cloudinary.com/nearbytes/image/upload/c_scale,q_100,w_1000/v1496424748/Screen_Shot_2017-06-02_at_10.32.06_AM_rfs35s.png)
+![screenshot](http://res.cloudinary.com/nearbytes/image/upload/c_scale,q_100,w_1000/v1498517854/Screen_Shot_2017-06-26_at_3.57.01_PM_dvmh4b.png)
 
 ## Gameplay and Features
 
@@ -21,7 +21,7 @@ Songs can be selected, at which point a score counter is displayed and notes beg
 of the screen. The player increases their score by pressing the proper key as these notes cross
 the blue line on-screen. At the end of the song, the player is assigned a grade based on their performance.
 
-![screenshot](http://res.cloudinary.com/nearbytes/image/upload/c_scale,q_100,w_1000/v1496425494/Screen_Shot_2017-06-02_at_10.44.23_AM_ph02z7.png)
+![screenshot](http://res.cloudinary.com/nearbytes/image/upload/c_scale,q_100,w_1000/v1498517853/Screen_Shot_2017-06-26_at_3.56.28_PM_oo5sii.png)
 
 ### Key Presses, Audio Tones, and Scoring
 
