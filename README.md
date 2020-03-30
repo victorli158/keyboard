@@ -1,7 +1,5 @@
 # KEYboard
 
-[KEYboard Live Link](https://victorli158.github.io/keyboard/)
-
 ## Background
 
 KEYboard is a game that allows players to turn their device keyboard into a piano.
